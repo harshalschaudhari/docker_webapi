@@ -14,7 +14,7 @@ docker tag docker_webapi:v2 harshalschaudhari/dockerwebapi
 #Step 3.2 Push local docker image to GitHub artifactory
 docker push harshalschaudhari/dockerwebapi
 
-#Step 3.3 : Create the docker-compose.yml
+#Step 3.3 : Create thefile docker-compose.yml
 
 #Step 4: Run docker Image based on YAML (Should be in current folder of docker-compose.yml)
 docker-compose up
