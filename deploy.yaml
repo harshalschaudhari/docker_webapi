@@ -1,0 +1,36 @@
+#Deploy Sample Web api
+apiVersion: v1
+kind: Service
+metadata:
+  name: webdemo
+  labels:
+    app: webdemo
+    version: v1
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30006
+    name: http
+  selector:
+    app: webdemo
+    version: v1
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webdemo
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: webdemo
+        version: v1
+    spec:
+      containers:
+      - name: webdemo
+        image: harshalschaudhari/dockerwebapi
+        ports:
+        - containerPort: 80
