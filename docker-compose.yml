@@ -1,0 +1,5 @@
+# Run docker image container 
+webapp:
+  image: harshalschaudhari/dockerwebapi
+  ports:
+    - "8089:80"
